@@ -1,25 +1,32 @@
 import React from 'react'
 import styled from "styled-components"
-function Section(props) {
-    const bg=props.backgroundImg
-    return (
-        
-        <Wrap bgImage={bg}>
-            <Itemtext>
-                <h1>{props.title}</h1>
-                <p>{props.description}</p>
-            </Itemtext>
-            <Buttons>
-                <Buttongroup>
-                    <Leftbutton>
-                        {props.leftbtntext}
-                    </Leftbutton>
-                    {props.rightbtntext &&   <Rightbutton>
-                        {props.rightbtntext}
-                    </Rightbutton>}
+import Fade from 'react-reveal/Fade';
 
-                  
-                </Buttongroup>
+function Section(props) {
+    const bg = props.backgroundImg
+    return (
+
+        <Wrap bgImage={bg}>
+            <Fade bottom>
+                <Itemtext>
+                    <h1>{props.title}</h1>
+                    <p>{props.description}</p>
+                </Itemtext>
+            </Fade>
+
+            <Buttons>
+                <Fade bottom>
+                    <Buttongroup>
+                        <Leftbutton>
+                            {props.leftbtntext}
+                        </Leftbutton>
+                        {props.rightbtntext && <Rightbutton>
+                            {props.rightbtntext}
+                        </Rightbutton>}
+
+
+                    </Buttongroup>
+                </Fade>
                 <Downarrow src="/images/down-arrow.svg"></Downarrow>
             </Buttons>
 
@@ -35,7 +42,7 @@ const Wrap = styled.div`
     background-position:center;
     background-repeat:no-repeat;
     
-    background-image:${(props)=>`url('/images/${props.bgImage}')`};
+    background-image:${(props) => `url('/images/${props.bgImage}')`};
  
     
     display:flex;
