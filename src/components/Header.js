@@ -29,7 +29,7 @@ function Header() {
                 <Customclose onClick={() => { setburgerStatus(false) }}>
                     <i class="fa-solid fa-x"></i>
                 </Customclose>
-
+                
                 <li><a href='#'>Existing Inventory</a></li>
                 <li><a href='#'>Used Inventory</a></li>
                 <li><a href='#'>Trade In</a></li>
@@ -108,7 +108,7 @@ const Burgernav = styled.div`
     }
     
 `
-const Customclose = d.div`
+const Customclose = styled.div`
     i{
         float:right;
         cursor:pointer
